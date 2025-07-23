@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Discovery - License Chooser</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-gray-100 font-source-sans-pro">
+    <header class="bg-gray-900 shadow-lg py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-bold text-white">LicenseHub</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="licenses.html" class="text-gray-300 hover:text-white transition duration-300">Discover Licenses</a></li>
+                    <li><a href="chooser.html" class="text-white hover:text-gray-300 transition duration-300">License Chooser</a></li>
+                    <li><a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About Licenses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-16 px-4">
+        <h1 class="text-5xl font-extrabold text-white mb-12 text-center">License Chooser Help</h1>
+
+        <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl border border-gray-800">
+            <p class="text-lg text-gray-300 mb-8">Answer a few questions to help us recommend the best license for your project.</p>
+
+            <div id="chooserQuestions" class="space-y-8">
+                <div class="question-block" data-question-id="1">
+                    <h3 class="text-2xl font-semibold text-white mb-4">1. What type of project are you licensing?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="projectType" value="software" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Software / Code</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="projectType" value="creative_content" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Art, Music, Photos, Videos, Text (Creative Content)</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="projectType" value="font" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Font</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="2" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-white mb-4">2. Do you want to allow commercial use of your project?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="commercialUse" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="commercialUse" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="3" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-white mb-4">3. Do you want to require attribution (credit) for your work?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="attribution" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="attribution" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                 <div class="question-block" data-question-id="4" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-white mb-4">4. Do you want modifications to be distributed under the same license? (Share-alike)</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="shareAlike" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="shareAlike" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="5" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-white mb-4">5. For software, do you want to ensure the source code is always available?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="sourceCode" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes (e.g., GPL-like licenses)</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                            <input type="radio" name="sourceCode" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No (e.g., MIT, Apache)</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="chooserResults" class="mt-10 p-6 bg-gray-800 rounded-lg border border-gray-700 hidden">
+                <h3 class="text-3xl font-bold text-white mb-6">Recommended Licenses:</h3>
+                <div id="recommendedLicensesList" class="space-y-4">
+                    </div>
+                 <button id="resetChooser" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Start Over</button>
+            </div>
+             <button id="nextQuestion" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300">Next Question</button>
+             <button id="prevQuestion" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 mr-4 hidden">Previous Question</button>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto text-center text-gray-400 px-4">
+            <p>&copy; 2025 LicenseHub. All rights reserved.</p>
+            <p class="mt-2 text-sm">Disclaimer: This tool provides general information and is not legal advice. Always consult with a legal professional for specific licensing needs.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

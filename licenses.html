@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Discovery - All Licenses</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-black text-gray-100 font-source-sans-pro">
+    <header class="bg-gray-900 shadow-lg py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html" class="text-3xl font-bold text-white">LicenseHub</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="licenses.html" class="text-white hover:text-gray-300 transition duration-300">Discover Licenses</a></li>
+                    <li><a href="chooser.html" class="text-gray-300 hover:text-white transition duration-300">License Chooser</a></li>
+                    <li><a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About Licenses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-16 px-4">
+        <h1 class="text-5xl font-extrabold text-white mb-12 text-center">Explore All Licenses</h1>
+
+        <div class="flex flex-col md:flex-row gap-8 mb-12">
+            <div class="w-full md:w-1/4 bg-gray-900 p-6 rounded-lg shadow-xl border border-gray-800">
+                <h2 class="text-2xl font-bold text-white mb-6">Filter Licenses</h2>
+                <div class="mb-6">
+                    <label for="search" class="block text-gray-300 text-lg font-semibold mb-2">Search by Name:</label>
+                    <input type="text" id="search" class="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., MIT, GPL, CC BY">
+                </div>
+
+                <div class="mb-6">
+                    <label for="typeFilter" class="block text-gray-300 text-lg font-semibold mb-2">License Type:</label>
+                    <select id="typeFilter" class="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="all">All Types</option>
+                        <option value="Open Source">Open Source</option>
+                        <option value="Creative Commons">Creative Commons</option>
+                        <option value="Font">Font</option>
+                        <option value="Media">Media</option>
+                        <option value="Commercial">Commercial (Example)</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-300 text-lg font-semibold mb-3">Permissions:</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="permission" value="Commercial Use" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Commercial Use</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="permission" value="Modification" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Modification</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="permission" value="Distribution" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Distribution</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="permission" value="Private Use" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Private Use</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-300 text-lg font-semibold mb-3">Conditions:</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="condition" value="Attribution" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Attribution</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="condition" value="Share Alike" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Share Alike</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="condition" value="Source Code" class="form-checkbox h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-2 text-gray-300">Source Code</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="resetFilters" class="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Reset Filters</button>
+            </div>
+
+            <div class="w-full md:w-3/4" id="licensesContainer">
+                <div class="text-center text-gray-400 py-10" id="noLicensesFound" style="display: none;">
+                    No licenses found matching your criteria.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 py-8 mt-16">
+        <div class="container mx-auto text-center text-gray-400 px-4">
+            <p>&copy; 2025 LicenseHub. All rights reserved.</p>
+            <p class="mt-2 text-sm">Disclaimer: This tool provides general information and is not legal advice. Always consult with a legal professional for specific licensing needs.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
