@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>License Discovery - License Chooser</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-black text-gray-100 font-source-sans-pro">
     <header class="bg-gray-900 shadow-lg py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html" class="text-3xl font-bold text-white">LicenseHub</a>
-            <nav>
+            <a href="index.html" class="text-3xl font-bold text-white" aria-label="LicenseHub Home">LicenseHub</a>
+            <nav aria-label="Main Navigation">
                 <ul class="flex space-x-6">
-                    <li><a href="licenses.html" class="text-gray-300 hover:text-white transition duration-300">Discover Licenses</a></li>
-                    <li><a href="chooser.html" class="text-white hover:text-gray-300 transition duration-300">License Chooser</a></li>
-                    <li><a href="about.html" class="text-gray-300 hover:text-white transition duration-300">About Licenses</a></li>
+                    <li><a href="licenses.html" class="text-gray-300 hover:text-white transition duration-300" aria-label="Discover Licenses Page">Discover Licenses</a></li>
+                    <li><a href="chooser.html" class="text-white hover:text-gray-300 transition duration-300" aria-current="page">License Chooser</a></li>
+                    <li><a href="about.html" class="text-gray-300 hover:text-white transition duration-300" aria-label="About Licenses Page">About Licenses</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,98 +25,126 @@
     <main class="container mx-auto py-16 px-4">
         <h1 class="text-5xl font-extrabold text-white mb-12 text-center">License Chooser Help</h1>
 
-        <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl border border-gray-800">
+        <div class="max-w-3xl mx-auto bg-gray-900 p-8 rounded-lg shadow-xl border border-gray-800" aria-live="polite">
             <p class="text-lg text-gray-300 mb-8">Answer a few questions to help us recommend the best license for your project.</p>
 
             <div id="chooserQuestions" class="space-y-8">
-                <div class="question-block" data-question-id="1">
-                    <h3 class="text-2xl font-semibold text-white mb-4">1. What type of project are you licensing?</h3>
+                <div class="question-block" data-question-id="1" role="group" aria-labelledby="q1-heading">
+                    <h3 id="q1-heading" class="text-2xl font-semibold text-white mb-4">1. What type of project are you licensing?</h3>
                     <div class="space-y-3">
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="projectType" value="software" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
                             <span class="ml-3">Software / Code</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="projectType" value="creative_content" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
                             <span class="ml-3">Art, Music, Photos, Videos, Text (Creative Content)</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="projectType" value="font" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
                             <span class="ml-3">Font</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="question-block" data-question-id="2" style="display: none;">
-                    <h3 class="text-2xl font-semibold text-white mb-4">2. Do you want to allow commercial use of your project?</h3>
+                <div class="question-block" data-question-id="2" role="group" aria-labelledby="q2-heading" style="display: none;">
+                    <h3 id="q2-heading" class="text-2xl font-semibold text-white mb-4">2. Do you want to allow commercial use of your project?</h3>
                     <div class="space-y-3">
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="commercialUse" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">Yes</span>
+                            <span class="ml-3">Yes, allow commercial use</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="commercialUse" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">No</span>
+                            <span class="ml-3">No, restrict commercial use</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="question-block" data-question-id="3" style="display: none;">
-                    <h3 class="text-2xl font-semibold text-white mb-4">3. Do you want to require attribution (credit) for your work?</h3>
+                <div class="question-block" data-question-id="3" role="group" aria-labelledby="q3-heading" style="display: none;">
+                    <h3 id="q3-heading" class="text-2xl font-semibold text-white mb-4">3. Do you want to require attribution (credit) for your work?</h3>
                     <div class="space-y-3">
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="attribution" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">Yes</span>
+                            <span class="ml-3">Yes, attribution is required</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="attribution" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">No</span>
+                            <span class="ml-3">No, attribution is optional or not required</span>
                         </label>
                     </div>
                 </div>
 
-                 <div class="question-block" data-question-id="4" style="display: none;">
-                    <h3 class="text-2xl font-semibold text-white mb-4">4. Do you want modifications to be distributed under the same license? (Share-alike)</h3>
+                <div class="question-block" data-question-id="4" role="group" aria-labelledby="q4-heading" style="display: none;">
+                    <h3 id="q4-heading" class="text-2xl font-semibold text-white mb-4">4. Do you want modifications/derivatives to be distributed under the same license? (Share-alike)</h3>
                     <div class="space-y-3">
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="shareAlike" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">Yes</span>
+                            <span class="ml-3">Yes, require share-alike (copyleft)</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
                             <input type="radio" name="shareAlike" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">No</span>
+                            <span class="ml-3">No, derivatives can be under different licenses</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="question-block" data-question-id="5" style="display: none;">
-                    <h3 class="text-2xl font-semibold text-white mb-4">5. For software, do you want to ensure the source code is always available?</h3>
+                <div class="question-block" data-question-id="5" role="group" aria-labelledby="q5-heading" style="display: none;">
+                    <h3 id="q5-heading" class="text-2xl font-semibold text-white mb-4">5. For software, do you want to explicitly grant patent rights from contributors to users?</h3>
                     <div class="space-y-3">
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
-                            <input type="radio" name="sourceCode" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">Yes (e.g., GPL-like licenses)</span>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="patentGrant" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes, explicit patent grant is desired (e.g., Apache)</span>
                         </label>
-                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200">
-                            <input type="radio" name="sourceCode" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
-                            <span class="ml-3">No (e.g., MIT, Apache)</span>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="patentGrant" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No, not a primary concern (e.g., MIT, BSD)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="6" role="group" aria-labelledby="q6-heading" style="display: none;">
+                    <h3 id="q6-heading" class="text-2xl font-semibold text-white mb-4">6. Is your software primarily a library that others might link to in their (possibly proprietary) applications?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="isLibrary" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes, it's a library</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="isLibrary" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No, it's a standalone application or component</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block" data-question-id="7" role="group" aria-labelledby="q7-heading" style="display: none;">
+                    <h3 id="q7-heading" class="text-2xl font-semibold text-white mb-4">7. For creative content, do you want to allow adaptations or modifications of your work?</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="allowDerivatives" value="yes" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">Yes, allow adaptations (e.g., remixes, edits)</span>
+                        </label>
+                        <label class="flex items-center text-gray-300 cursor-pointer p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition duration-200 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-opacity-75">
+                            <input type="radio" name="allowDerivatives" value="no" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 rounded">
+                            <span class="ml-3">No, only allow original work to be shared (No Derivatives)</span>
                         </label>
                     </div>
                 </div>
 
             </div>
 
-            <div id="chooserResults" class="mt-10 p-6 bg-gray-800 rounded-lg border border-gray-700 hidden">
+            <div id="chooserResults" class="mt-10 p-6 bg-gray-800 rounded-lg border border-gray-700 hidden" role="region" aria-live="polite">
                 <h3 class="text-3xl font-bold text-white mb-6">Recommended Licenses:</h3>
                 <div id="recommendedLicensesList" class="space-y-4">
                     </div>
-                 <button id="resetChooser" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md transition duration-300">Start Over</button>
+                 <button id="resetChooser" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75">Start Over</button>
             </div>
-             <button id="nextQuestion" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300">Next Question</button>
-             <button id="prevQuestion" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 mr-4 hidden">Previous Question</button>
+             <button id="nextQuestion" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">Next Question</button>
+             <button id="prevQuestion" class="mt-8 bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 mr-4 hidden focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75">Previous Question</button>
         </div>
     </main>
 
-    <footer class="bg-gray-900 py-8 mt-16">
+    <footer class="bg-gray-900 py-8 mt-16" role="contentinfo">
         <div class="container mx-auto text-center text-gray-400 px-4">
             <p>&copy; 2025 LicenseHub. All rights reserved.</p>
             <p class="mt-2 text-sm">Disclaimer: This tool provides general information and is not legal advice. Always consult with a legal professional for specific licensing needs.</p>
