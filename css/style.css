@@ -22,3 +22,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #6a6a6a; /* Lighter gray on hover */
 }
+
+/* Ensure focus rings are visible */
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Blue-500 with opacity */
+}
+/* You can also use Tailwind's focus:ring-2 focus:ring-blue-500 directly on elements */
