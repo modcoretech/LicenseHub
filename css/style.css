@@ -1,0 +1,24 @@
+/* css/style.css */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Custom scrollbar for dark theme - Webkit */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Dark gray for the track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a; /* Medium gray for the thumb */
+    border-radius: 10px;
+    border: 3px solid #1a1a1a; /* Padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6a6a6a; /* Lighter gray on hover */
+}
