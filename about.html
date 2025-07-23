@@ -11,12 +11,12 @@
 <body class="bg-black text-gray-100 font-source-sans-pro">
     <header class="bg-gray-900 shadow-lg py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html" class="text-3xl font-bold text-white">LicenseHub</a>
-            <nav>
+            <a href="index.html" class="text-3xl font-bold text-white" aria-label="LicenseHub Home">LicenseHub</a>
+            <nav aria-label="Main Navigation">
                 <ul class="flex space-x-6">
-                    <li><a href="licenses.html" class="text-gray-300 hover:text-white transition duration-300">Discover Licenses</a></li>
-                    <li><a href="chooser.html" class="text-gray-300 hover:text-white transition duration-300">License Chooser</a></li>
-                    <li><a href="about.html" class="text-white hover:text-gray-300 transition duration-300">About Licenses</a></li>
+                    <li><a href="licenses.html" class="text-gray-300 hover:text-white transition duration-300" aria-label="Discover Licenses Page">Discover Licenses</a></li>
+                    <li><a href="chooser.html" class="text-gray-300 hover:text-white transition duration-300" aria-label="License Chooser Page">License Chooser</a></li>
+                    <li><a href="about.html" class="text-white hover:text-gray-300 transition duration-300" aria-current="page">About Licenses</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +42,7 @@
                             These licenses typically allow users to freely use, modify, and distribute software. They are broadly categorized into "permissive" and "copyleft" licenses.
                             <ul class="list-disc list-inside ml-4 mt-2 text-gray-400">
                                 <li><strong>Permissive Licenses (e.g., MIT, Apache 2.0, BSD):</strong> Grant extensive rights with minimal restrictions, primarily requiring attribution. They allow proprietary derivatives.</li>
-                                <li><strong>Copyleft Licenses (e.g., GPL, LGPL, AGPL):</strong> Require that derivative works also be licensed under the same or a compatible open-source license, ensuring that the software remains "free."</li>
+                                <li><strong>Copyleft Licenses (e.g., GPL, LGPL, AGPL):</strong> Require that derivative works also be licensed under the same or a compatible open-source license, ensuring that the software remains "free." Strong copyleft (GPL, AGPL) applies to the entire work, while weak copyleft (LGPL, MPL) applies more narrowly, often to the licensed component itself.</li>
                             </ul>
                         </p>
                     </div>
@@ -57,6 +57,7 @@
                                 <li><strong>CC BY-NC (Attribution-NonCommercial):</strong> Allows others to remix, adapt, and build upon your work non-commercially, and although their new works must also acknowledge you and be non-commercial, they don’t have to license their derivative works on the same terms.</li>
                                 <li><strong>CC BY-NC-SA (Attribution-NonCommercial-ShareAlike):</strong> Allows others to remix, adapt, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.</li>
                                 <li><strong>CC BY-NC-ND (Attribution-NonCommercial-NoDerivatives):</strong> The most restrictive of the six main licenses, allowing others to download your works and share them with others as long as they credit you, but they can’t change them in any way or use them commercially.</li>
+                                <li><strong>CC0 (Public Domain Dedication):</strong> Waives all copyright and related rights, effectively placing the work in the public domain.</li>
                             </ul>
                         </p>
                     </div>
@@ -65,11 +66,17 @@
                         <p class="text-gray-300 leading-relaxed">
                             Font licenses dictate how a typeface can be used. These can vary significantly, from free for personal use to requiring commercial licenses for broader applications, embedding, or web use. Always check the specific terms of a font license.
                             <ul class="list-disc list-inside ml-4 mt-2 text-gray-400">
-                                <li><strong>Open Font License (OFL):</strong> A free, libre and open source license for fonts. It permits fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves.</li>
+                                <li><strong>Open Font License (OFL):</strong> A free, libre and open source license for fonts. It permits fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. It's common for Google Fonts.</li>
                                 <li><strong>Desktop Licenses:</strong> For installing on a computer for design work.</li>
                                 <li><strong>Webfont Licenses:</strong> For embedding fonts on websites using @font-face.</li>
                                 <li><strong>App/E-book Licenses:</strong> For embedding fonts within applications or e-books.</li>
                             </ul>
+                        </p>
+                    </div>
+                     <div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">Commercial Licenses</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            These licenses are typically used for proprietary software or content sold commercially. They are highly restrictive, only granting specific rights (e.g., installation, limited use) and often come with an End User License Agreement (EULA). Redistribution, modification, and reverse engineering are almost always prohibited.
                         </p>
                     </div>
                 </div>
@@ -78,13 +85,15 @@
             <section>
                 <h2 class="text-3xl font-bold text-white mb-4">Key Terms and Concepts</h2>
                 <div class="space-y-4 text-gray-300 leading-relaxed">
-                    <p><strong>Permissions:</strong> What users are allowed to do (e.g., commercial use, modification, distribution, private use).</p>
-                    <p><strong>Conditions:</strong> What users must do (e.g., provide attribution, share alike, include copyright notice).</p>
-                    <p><strong>Limitations:</strong> What users cannot do, often disclaimers of warranty or liability.</p>
-                    <p><strong>Attribution (BY):</strong> Users must give credit to the creator.</p>
-                    <p><strong>Share Alike (SA):</strong> If you modify or build upon the material, you must license the modified material under the same license.</p>
-                    <p><strong>Non-Commercial (NC):</strong> Users cannot use the material for commercial purposes.</p>
-                    <p><strong>No Derivatives (ND):</strong> Users can share the material, but cannot adapt, remix, or transform it.</p>
+                    <p><strong>Permissions:</strong> What users are allowed to do (e.g., commercial use, modification, distribution, private use, patent use).</p>
+                    <p><strong>Conditions:</strong> What users must do to comply with the license (e.g., provide attribution, share alike, include copyright notice, disclose source code).</p>
+                    <p><strong>Limitations:</strong> What users cannot do or what the licensor is not liable for (e.g., commercial use (if prohibited), modification (if prohibited), liability, warranty).</p>
+                    <p><strong>Attribution (BY):</strong> Users must give credit to the original creator.</p>
+                    <p><strong>Share Alike (SA) / Copyleft:</strong> If you modify or build upon the material, you must license the modified material under the same or a compatible license.</p>
+                    <p><strong>Non-Commercial (NC):</strong> Users cannot use the material for commercial purposes (e.g., selling it, using it in commercial software).</p>
+                    <p><strong>No Derivatives (ND):</strong> Users can share the material, but cannot adapt, remix, or transform it in any way.</p>
+                    <p><strong>Patent Grant:</strong> An explicit clause in some licenses (like Apache 2.0) that grants users a license to any patents held by contributors that are infringed by the software.</p>
+                    <p><strong>Public Domain Equivalent:</strong> Licenses or dedications (like CC0, Unlicense) that aim to place work in the public domain, waiving as many rights as possible.</p>
                 </div>
             </section>
 
@@ -97,7 +106,7 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 py-8 mt-16">
+    <footer class="bg-gray-900 py-8 mt-16" role="contentinfo">
         <div class="container mx-auto text-center text-gray-400 px-4">
             <p>&copy; 2025 LicenseHub. All rights reserved.</p>
             <p class="mt-2 text-sm">Disclaimer: This tool provides general information and is not legal advice. Always consult with a legal professional for specific licensing needs.</p>
